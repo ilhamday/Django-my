@@ -5,6 +5,7 @@ from django.db import models
 # Model for storing pet information | model is like a table
 class Pet(models.Model):
     
+    # Pilihan ganda M/F yang disempen ke db | Male/Female yang ditampilin di form
     SEX_CHOICES = [('M','Male'), ('F','Female')]
 
     # the fields name
@@ -16,9 +17,9 @@ class Pet(models.Model):
     sex = models.CharField(max_length=1, choices=SEX_CHOICES, blank=True)
     submission_date = models.DateTimeField()
     age = models.IntegerField(null=True)
-    # table relationship
+    # table relationship many-to-many relationship
     # a pet can have many vaccine and the same vaccine can be applied to many pets
-    # many-to-many relationship
+    # 'Vaccine' inside () is refer to class Vaccine
     vaccinations = models.ManyToManyField('Vaccine', blank=True)
 
 class Vaccine(models.Model):
