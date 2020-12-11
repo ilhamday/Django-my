@@ -24,3 +24,7 @@ class Pet(models.Model):
 
 class Vaccine(models.Model):
     name = models.CharField(max_length=50)
+
+    # override __str__ method, this methot tell Django what the string representation should be for this model
+    def __str__(self):
+        return self.name # Tell to use name field for it's default representation as string
