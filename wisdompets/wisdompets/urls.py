@@ -16,6 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from adoptions import views
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    # atribute-1 empty string '' -> root url | 
+    # atribute-2 views.home -> view to use | 
+    # attribute-3 name='' -> untuk created link
+    path('', views.home, name='home'),
+    path('adoptions/<int:pet_id>/', views.pet_detail, name='pet_detail')
 ]
