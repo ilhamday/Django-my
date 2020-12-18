@@ -1,1 +1,17 @@
-home
+<div>
+    <!-- looping, the pets is from views home -->
+    {% for pet in pets %}
+        <div class="petname">
+            <!-- url takes the name of urlpattern, 'pet_detail' is the name, pet.id is the required attribute -->
+            <!-- check urls.py -->
+            <a href="{% url 'pet_detail' pet.id %}"> 
+                <h3>{{ pet.name|capfirst }}</h3> <!-- capfirst -> make first later capital -->
+            </a>
+            <p>{{ pet.species }}</p>
+            {% if pet.breed %} <!-- check if breed is there, because breed is blank==True -->
+                <p>Breed: {{ pet.breed }}</p>
+            {% endif %}
+            <p class="hidden">{{ pet.description }}</p>
+        </div>
+    {% endfor %}
+</div>
