@@ -2,7 +2,7 @@
     <!-- looping, the pets is from views home -->
     {% for pet in pets %}
         <div class="petname">
-            <!-- url takes the name of urlpattern, 'pet_detail' is the name, pet.id is the required attribute -->
+            <!-- url takes urlpattern's name, 'pet_detail' is the name, pet.id is the required attribute -->
             <!-- check urls.py -->
             <a href="{% url 'pet_detail' pet.id %}"> 
                 <h3>{{ pet.name|capfirst }}</h3> <!-- capfirst -> make first later capital -->
