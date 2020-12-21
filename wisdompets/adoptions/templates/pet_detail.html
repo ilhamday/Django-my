@@ -1,3 +1,6 @@
+{% extends "base.html" %}
+
+{% block content %}
 <div>
     <!-- pet is the key in dictionary inside pet_detail views -->
     <h3>{{ pet.name|capfirst }}</h3>
@@ -23,3 +26,4 @@
     <p>Submitted on: {{ pet.submission_date|date:"d M Y" }}</p>
     <p>{{ pet.description }}</p>
 </div>
+{% endblock %}
